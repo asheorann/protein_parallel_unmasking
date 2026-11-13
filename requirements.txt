@@ -1,0 +1,12 @@
+# Core. Install torch first if you need a specific CUDA build:
+#   https://pytorch.org/get-started/locally/
+torch>=2.1
+transformers>=4.40
+biotite>=0.40
+numpy>=1.24
+matplotlib>=3.7
+requests>=2.31
+
+# ESMFold (the `fold` step) additionally needs these. Skip them with FOLD=0
+# and you still get the bound experiment and sequence recovery.
+accelerate>=0.27
