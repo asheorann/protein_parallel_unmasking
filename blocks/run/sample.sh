@@ -2,7 +2,7 @@
 # Experiment 2: generation quality vs NFE, one curve per partition.
 # Much more expensive than bound.sh. FOLD=0 skips ESMFold.
 set -euo pipefail
-cd "$(dirname "$0")/../.."
+cd "$(dirname "$0")/../.."   # -> repo root
 
 python -m blocks.cli sample \
   --pdb-dir   "${PDB_DIR:-blocks/data/pdb}" \

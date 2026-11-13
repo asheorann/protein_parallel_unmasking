@@ -3,7 +3,7 @@
 # Same blocks, four orderings. Separates "which positions share a block" from
 # "which block goes first".
 set -euo pipefail
-cd "$(dirname "$0")/../.."
+cd "$(dirname "$0")/../.."   # -> repo root
 
 for ORDER in natural burial size random; do
   python -m blocks.cli bound \

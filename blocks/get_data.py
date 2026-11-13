@@ -1,9 +1,9 @@
 """Download protein structures from RCSB so the experiments have input.
 
-    python get_data.py                       # default set, into data/pdb
-    python get_data.py --out data/pdb -n 20  # fewer
-    python get_data.py --ids 1UBQ 2GB1 1SHG  # specific ones
-    python get_data.py --id-file my_ids.txt  # one PDB id per line
+Run from repo root:
+    python blocks/get_data.py                            # default set
+    python blocks/get_data.py --out blocks/data/pdb -n 20  # fewer
+    python blocks/get_data.py --ids 1UBQ 2GB1 1SHG       # specific ones
 
 Any directory of .pdb or .cif files works, so if you already have CATH domain
 files, point the experiments at that directory instead and skip this.

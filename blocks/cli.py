@@ -1,10 +1,10 @@
 """Command line interface.
 
     python -m blocks.cli smoke
-    python -m blocks.cli bound   --pdb-dir data/cath --out results/bound.jsonl
-    python -m blocks.cli sample  --pdb-dir data/cath --out results/samples.jsonl
-    python -m blocks.cli fold    --samples results/samples.jsonl --out results/folded.jsonl
-    python -m blocks.cli figures --bound results/bound.jsonl --folded results/folded.jsonl
+    python -m blocks.cli bound   --pdb-dir blocks/data/cath --out blocks/results/bound.jsonl
+    python -m blocks.cli sample  --pdb-dir blocks/data/cath --out blocks/results/samples.jsonl
+    python -m blocks.cli fold    --samples blocks/results/samples.jsonl --out blocks/results/folded.jsonl
+    python -m blocks.cli figures --bound blocks/results/bound.jsonl --folded blocks/results/folded.jsonl
 
 Every subcommand writes JSONL so runs can be resumed, merged across machines,
 and traced back to the exact configuration that produced them.
@@ -18,13 +18,23 @@ from pathlib import Path
 
 import numpy as np
 
-from . import bound as bound_mod
-from . import evaluate as eval_mod
-from . import plots as plot_mod
-from .model import load_denoiser
-from .partitions import STRATEGIES, make_partition
-from .sample import sample_sequence
-from .structure import load_dataset
+# Support both `python cli.py` and `python -m package.cli`
+try:
+    from . import bound as bound_mod
+    from . import evaluate as eval_mod
+    from . import plots as plot_mod
+    from .model import load_denoiser
+    from .partitions import STRATEGIES, make_partition
+    from .sample import sample_sequence
+    from .structure import load_dataset
+except ImportError:
+    import bound as bound_mod
+    import evaluate as eval_mod
+    import plots as plot_mod
+    from model import load_denoiser
+    from partitions import STRATEGIES, make_partition
+    from sample import sample_sequence
+    from structure import load_dataset
 
 DEFAULT_STRATEGIES = [
     "contiguous", "anticluster", "cluster", "random", "burial", "sse",
@@ -192,7 +202,10 @@ def cmd_smoke(args):
     )
 
     print("partition shapes and coupling mass:")
-    from .partitions import coupling_mass
+    try:
+        from .partitions import coupling_mass
+    except ImportError:
+        from partitions import coupling_mass
     for s in STRATEGIES:
         part = make_partition(s, rec, block_size=8)
         assert sorted(np.concatenate(part).tolist()) == list(range(L)), \

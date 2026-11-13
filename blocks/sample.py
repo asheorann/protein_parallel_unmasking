@@ -22,8 +22,12 @@ from dataclasses import dataclass
 import numpy as np
 import torch
 
-from .model import MASK, Denoiser
-from .partitions import Partition
+try:
+    from .model import MASK, Denoiser
+    from .partitions import Partition
+except ImportError:
+    from model import MASK, Denoiser
+    from partitions import Partition
 
 
 @dataclass

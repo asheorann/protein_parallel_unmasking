@@ -46,8 +46,12 @@ from dataclasses import dataclass
 import numpy as np
 import torch
 
-from .model import MASK, Denoiser
-from .partitions import Partition, block_size_stats, coupling_mass
+try:
+    from .model import MASK, Denoiser
+    from .partitions import Partition, block_size_stats, coupling_mass
+except ImportError:
+    from model import MASK, Denoiser
+    from partitions import Partition, block_size_stats, coupling_mass
 
 
 @dataclass

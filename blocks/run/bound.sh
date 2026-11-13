@@ -2,7 +2,7 @@
 # Experiment 1: block-decomposed NLL bound vs partition.
 # Cheap. No generation, no folding. Run this first; it is the theory result.
 set -euo pipefail
-cd "$(dirname "$0")/../.."
+cd "$(dirname "$0")/../.."   # -> repo root
 
 python -m blocks.cli bound \
   --pdb-dir   "${PDB_DIR:-blocks/data/pdb}" \
