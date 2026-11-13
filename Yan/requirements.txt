@@ -1,0 +1,26 @@
+# Yan's folder: masked diffusion for proteins
+#
+# Versions are the ones these results were produced with, not floors. Two are
+# load-bearing and should not be relaxed casually:
+#
+#   torch >= 2.6   transformers refuses `.bin` checkpoints under torch 2.6,
+#                  and DPLM ships only `.bin`. 2.7.1 is what was used.
+#   numpy < 2      the rest of the stack here was pinned below numpy 2, which
+#                  is why the SwissProt corpus is cached as plain text rather
+#                  than read from parquet.
+#
+# Install torch for your own CUDA build first if you need a specific one, e.g.
+#   pip install torch==2.7.1 --index-url https://download.pytorch.org/whl/cu126
+# then
+#   pip install -r Yan/requirements.txt
+
+torch==2.7.1
+transformers==4.57.6
+numpy==1.26.4
+scipy==1.17.1
+pandas==2.2.3
+matplotlib==3.11.2
+
+# Ref-TM / Ref-RMSD only (conditioning/experiments/ref_tm.py). Everything else
+# runs without it.
+tmtools==0.3.0
