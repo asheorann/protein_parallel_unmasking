@@ -25,7 +25,7 @@ import requests
 # CATH v4.4 API endpoint for domain PDB files
 CATH_API = "http://www.cathdb.info/version/v4_4_0/api/rest/id/{domain_id}.pdb"
 # CATH S35 representative domains FASTA
-CATH_S35_URL = "http://download.cathdb.info/cath/releases/all-releases/v4_4_0/sequence-data/cath-domain-seqs-S35.fa"
+CATH_S35_URL = "https://download.cathdb.info/cath/releases/all-releases/v4_4_0/sequence-data/cath-domain-seqs-S35-v4_4_0.fa"
 
 # Regex to extract domain ID from CATH FASTA header
 # e.g., "cath|4_4_0|1a8dA01/1-246" -> "1a8dA01"

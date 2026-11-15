@@ -115,13 +115,24 @@ def load_structure(
     if not (min_length <= L <= max_length):
         return None
 
-    # secondary structure: biotite returns 'a', 'b', 'c', or '' for unassigned
+    # Secondary structure. biotite <1.5 returned the symbols 'a', 'b', 'c'
+    # directly; from 1.5 `annotate_sse` returns integer PSeaElement codes
+    # (COIL=0, HELIX=1, STRAND=2, NONE=-1) and `s in "abc"` then raises
+    # TypeError on an int, which the fallback below would swallow, silently
+    # annotating every chain as all-coil and collapsing the `sse` partition
+    # onto `single`. Decode the codes when the enum is present.
     try:
-        sse = struc.annotate_sse(atoms)
-        sse = "".join(s if s in "abc" else "c" for s in sse)
+        raw = struc.annotate_sse(atoms)
+        try:
+            from biotite.structure import PSeaElement
+            symbols = PSeaElement.to_symbols(raw)
+        except ImportError:
+            symbols = raw
+        sse = "".join(s if s in "abc" else "c" for s in symbols)
         if len(sse) != L:
-            sse = "c" * L
-    except Exception:
+            raise ValueError(f"annotate_sse returned {len(sse)} labels for {L} residues")
+    except Exception as exc:
+        print(f"  {path.stem}: secondary structure unavailable ({exc}); using all-coil")
         sse = "c" * L
 
     # relative solvent accessibility

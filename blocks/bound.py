@@ -92,7 +92,12 @@ def _build_state(
     for j in range(b + 1, len(partition)):
         z[0, partition[j]] = MASK
     block = partition[b]
-    z[0, block[mask_flags]] = MASK
+    # `block` is a numpy array, so the mask must be a numpy bool array too.
+    # Indexing numpy with a torch bool tensor is not reliably read as a mask:
+    # for a block of size one it is taken as the integer index 1 and raises
+    # IndexError, which is exactly the autoregressive exactness check.
+    flags = mask_flags.detach().cpu().numpy().astype(bool)
+    z[0, block[flags]] = MASK
     return z
 
 
@@ -138,23 +143,33 @@ def estimate_bound(
         ts = np.clip(ts, 1e-3, 1.0)
 
         states, weights, masks = [], [], []
+        n_empty = 0
         for t in ts:
             flags = torch.from_numpy(rng.random(len(block)) < t).to(denoiser.device)
             if not flags.any():
-                flags[rng.integers(len(block))] = True
+                # A draw that masks nothing contributes exactly zero: the inner
+                # sum is empty. Forcing a position to be masked here instead
+                # would keep the 1/t weight while making the indicator fire
+                # with probability one, so the estimator would no longer have
+                # E[(1/t) 1{masked}] = 1 and would overstate the bound by
+                # E[1/t] ~ ln(1/t_min) ~ 8 at the 1e-3 clip, failing the
+                # autoregressive exactness check. Skip the forward pass.
+                n_empty += 1
+                continue
             states.append(_build_state(x0, partition, b, flags))
             weights.append(1.0 / t)
             masks.append(flags)
 
-        batch = torch.cat(states, dim=0)
-        logp = denoiser.log_marginals(batch)           # (n_t, L, 20)
+        samples = [0.0] * n_empty
+        if states:
+            batch = torch.cat(states, dim=0)
+            logp = denoiser.log_marginals(batch)       # (n_live, L, 20)
 
-        samples = []
-        for s, (w, flags) in enumerate(zip(weights, masks)):
-            idx = torch.as_tensor(block, device=denoiser.device)[flags]
-            target = x0[0, idx]
-            nll = -logp[s, idx, :].gather(1, target[:, None]).squeeze(1).sum()
-            samples.append(w * nll.item())
+            for s, (w, flags) in enumerate(zip(weights, masks)):
+                idx = torch.as_tensor(block, device=denoiser.device)[flags]
+                target = x0[0, idx]
+                nll = -logp[s, idx, :].gather(1, target[:, None]).squeeze(1).sum()
+                samples.append(w * nll.item())
         per_block_means.append(float(np.mean(samples)))
 
     per_block_means = np.asarray(per_block_means)

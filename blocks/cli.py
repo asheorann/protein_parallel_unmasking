@@ -195,10 +195,15 @@ def cmd_smoke(args):
         for j in range(i + 3, L):
             if rng.random() < 0.05:
                 contacts[i, j] = contacts[j, i] = True
+    # `buried` must be a deterministic function of a fixed rsa, exactly as
+    # ProteinRecord.buried is. Drawing fresh random numbers on every call made
+    # _burial_partition see different answers in its two calls, so positions
+    # were dropped or duplicated and the smoke test failed its own assertion.
+    rsa = rng.random(L).astype(np.float32)
     rec = SimpleNamespace(
         name="synthetic", sequence=seq, length=L,
-        sse="c" * L, rsa=rng.random(L).astype(np.float32),
-        contacts=contacts, buried=lambda threshold=0.25: rng.random(L) < threshold,
+        sse="c" * L, rsa=rsa,
+        contacts=contacts, buried=lambda threshold=0.25: rsa < threshold,
     )
 
     print("partition shapes and coupling mass:")
