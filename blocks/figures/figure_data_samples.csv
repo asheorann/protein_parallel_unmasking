@@ -1,0 +1,114 @@
+figure,panel,label,value,ci_low,ci_high,note
+fig6,A,anticluster steps=8 pLDDT,44.59280504782995,,,measured NFE 9
+fig6,B,anticluster steps=8 recovery,0.06698374416039836,,,measured NFE 9
+fig6,A,anticluster steps=16 pLDDT,42.99434117476145,,,measured NFE 15
+fig6,B,anticluster steps=16 recovery,0.06656654124961041,,,measured NFE 15
+fig6,A,anticluster steps=32 pLDDT,43.79995057980219,,,measured NFE 32
+fig6,B,anticluster steps=32 recovery,0.06276425599830582,,,measured NFE 32
+fig6,A,anticluster steps=64 pLDDT,44.90474114815394,,,measured NFE 60
+fig6,B,anticluster steps=64 recovery,0.06493965410696195,,,measured NFE 60
+fig6,A,anticluster steps=128 pLDDT,43.51140761375427,,,measured NFE 95
+fig6,B,anticluster steps=128 recovery,0.06244631728064926,,,measured NFE 95
+fig6,A,autoregressive steps=8 pLDDT,48.277563055356346,,,measured NFE 109
+fig6,B,autoregressive steps=8 recovery,0.05424734136285635,,,measured NFE 109
+fig6,A,autoregressive steps=16 pLDDT,48.277563055356346,,,measured NFE 109
+fig6,B,autoregressive steps=16 recovery,0.05424734136285635,,,measured NFE 109
+fig6,A,autoregressive steps=32 pLDDT,48.277563055356346,,,measured NFE 109
+fig6,B,autoregressive steps=32 recovery,0.05424734136285635,,,measured NFE 109
+fig6,A,autoregressive steps=64 pLDDT,48.277563055356346,,,measured NFE 109
+fig6,B,autoregressive steps=64 recovery,0.05424734136285635,,,measured NFE 109
+fig6,A,autoregressive steps=128 pLDDT,48.277563055356346,,,measured NFE 109
+fig6,B,autoregressive steps=128 recovery,0.05424734136285635,,,measured NFE 109
+fig6,A,burial steps=8 pLDDT,41.904491206010185,,,measured NFE 9
+fig6,B,burial steps=8 recovery,0.058996315559985475,,,measured NFE 9
+fig6,A,burial steps=16 pLDDT,42.90689688920975,,,measured NFE 16
+fig6,B,burial steps=16 recovery,0.06054290789675214,,,measured NFE 16
+fig6,A,burial steps=32 pLDDT,43.509502033392586,,,measured NFE 32
+fig6,B,burial steps=32 recovery,0.06041202795884785,,,measured NFE 32
+fig6,A,burial steps=64 pLDDT,45.031569163004555,,,measured NFE 60
+fig6,B,burial steps=64 recovery,0.06417513818077851,,,measured NFE 60
+fig6,A,burial steps=128 pLDDT,46.174852112929024,,,measured NFE 96
+fig6,B,burial steps=128 recovery,0.06075867799060403,,,measured NFE 96
+fig6,A,cluster steps=8 pLDDT,40.7650171717008,,,measured NFE 9
+fig6,B,cluster steps=8 recovery,0.0626587410400348,,,measured NFE 9
+fig6,A,cluster steps=16 pLDDT,41.102279563744865,,,measured NFE 16
+fig6,B,cluster steps=16 recovery,0.05894022491107211,,,measured NFE 16
+fig6,A,cluster steps=32 pLDDT,41.61609705289205,,,measured NFE 31
+fig6,B,cluster steps=32 recovery,0.057178006926326005,,,measured NFE 31
+fig6,A,cluster steps=64 pLDDT,42.30599437157313,,,measured NFE 61
+fig6,B,cluster steps=64 recovery,0.06250104229604748,,,measured NFE 61
+fig6,A,cluster steps=128 pLDDT,42.575718800226845,,,measured NFE 95
+fig6,B,cluster steps=128 recovery,0.061922949548371485,,,measured NFE 95
+fig6,A,contiguous steps=8 pLDDT,42.5101709763209,,,measured NFE 9
+fig6,B,contiguous steps=8 recovery,0.057626598671797896,,,measured NFE 9
+fig6,A,contiguous steps=16 pLDDT,41.37729676564535,,,measured NFE 15
+fig6,B,contiguous steps=16 recovery,0.06087091843467256,,,measured NFE 15
+fig6,A,contiguous steps=32 pLDDT,44.10113896926244,,,measured NFE 32
+fig6,B,contiguous steps=32 recovery,0.05941224048091017,,,measured NFE 32
+fig6,A,contiguous steps=64 pLDDT,43.47057694196701,,,measured NFE 60
+fig6,B,contiguous steps=64 recovery,0.05960680278420284,,,measured NFE 60
+fig6,A,contiguous steps=128 pLDDT,42.4965852300326,,,measured NFE 95
+fig6,B,contiguous steps=128 recovery,0.05808842895748149,,,measured NFE 95
+fig6,A,random steps=8 pLDDT,44.00099643071493,,,measured NFE 9
+fig6,B,random steps=8 recovery,0.0619828229016282,,,measured NFE 9
+fig6,A,random steps=16 pLDDT,42.33045564095179,,,measured NFE 15
+fig6,B,random steps=16 recovery,0.06143570742419506,,,measured NFE 15
+fig6,A,random steps=32 pLDDT,42.765978038311005,,,measured NFE 32
+fig6,B,random steps=32 recovery,0.06256683871594011,,,measured NFE 32
+fig6,A,random steps=64 pLDDT,43.03365006049474,,,measured NFE 60
+fig6,B,random steps=64 recovery,0.060215580261148684,,,measured NFE 60
+fig6,A,random steps=128 pLDDT,43.49658966064453,,,measured NFE 95
+fig6,B,random steps=128 recovery,0.061193698609016495,,,measured NFE 95
+fig6,A,single steps=8 pLDDT,41.83416986465454,,,measured NFE 8
+fig6,B,single steps=8 recovery,0.06305496363191261,,,measured NFE 8
+fig6,A,single steps=16 pLDDT,41.41235782702764,,,measured NFE 16
+fig6,B,single steps=16 recovery,0.062983828744451,,,measured NFE 16
+fig6,A,single steps=32 pLDDT,41.62117226918539,,,measured NFE 32
+fig6,B,single steps=32 recovery,0.06044218404102856,,,measured NFE 32
+fig6,A,single steps=64 pLDDT,44.085877219835915,,,measured NFE 62
+fig6,B,single steps=64 recovery,0.06013564715887763,,,measured NFE 62
+fig6,A,single steps=128 pLDDT,43.500916262467705,,,measured NFE 98
+fig6,B,single steps=128 recovery,0.06007752440728206,,,measured NFE 98
+fig6,A,sse steps=8 pLDDT,41.64725412925085,,,measured NFE 14
+fig6,B,sse steps=8 recovery,0.06000069169819911,,,measured NFE 14
+fig6,A,sse steps=16 pLDDT,41.93260713418325,,,measured NFE 18
+fig6,B,sse steps=16 recovery,0.056353526583724806,,,measured NFE 18
+fig6,A,sse steps=32 pLDDT,41.7783908645312,,,measured NFE 32
+fig6,B,sse steps=32 recovery,0.05693657969507998,,,measured NFE 32
+fig6,A,sse steps=64 pLDDT,42.96909056107203,,,measured NFE 61
+fig6,B,sse steps=64 recovery,0.061106315741471136,,,measured NFE 61
+fig6,A,sse steps=128 pLDDT,43.47582757472992,,,measured NFE 94
+fig6,B,sse steps=128 recovery,0.059859695198229326,,,measured NFE 94
+fig6,B,composition null,0.05978970452960778,,,sum_a p_gen(a) p_nat(a)
+fig7,A,raw slope,-9.669537420858232,,,"r=-0.362, n=6000"
+fig7,A,within-cell slope,-10.239608830584224,,,"r=-0.439, n=6000, both axes centred on the cell mean"
+fig7,B,anticluster mean entropy,2.1637638882323156,,,
+fig7,B,anticluster mean pLDDT,43.96064911286036,,,
+fig7,B,autoregressive mean entropy,2.1956402544548723,,,
+fig7,B,autoregressive mean pLDDT,48.277563055356346,,,
+fig7,B,burial mean entropy,2.3167913997013234,,,
+fig7,B,burial mean pLDDT,43.90546228090922,,,
+fig7,B,cluster mean entropy,2.458893479783131,,,
+fig7,B,cluster mean pLDDT,41.673021392027536,,,
+fig7,B,contiguous mean entropy,2.516043334595149,,,
+fig7,B,contiguous mean pLDDT,42.79115377664566,,,
+fig7,B,random mean entropy,2.215708154843759,,,
+fig7,B,random mean pLDDT,43.1255339662234,,,
+fig7,B,single mean entropy,2.2367629343774604,,,
+fig7,B,single mean pLDDT,42.49089868863424,,,
+fig7,B,sse mean entropy,2.5226191659817347,,,
+fig7,B,sse mean pLDDT,42.36063405275345,,,
+fig8,,cluster - anticluster raw,-2.2876277208328246,-3.199260344107946,-1.3877256352702778,"pLDDT, paired in cell"
+fig8,,cluster - anticluster entropy-adjusted,0.734383850977626,-0.10187358557899097,1.5485083884385191,minus -10.24 x mean entropy gap +0.295 nats
+fig8,,cluster - anticluster entropy gap,0.295129591550816,,,nats
+fig8,,contiguous - anticluster raw,-1.1694953362147014,-1.9745473246773084,-0.36655482192834254,"pLDDT, paired in cell"
+fig8,,contiguous - anticluster entropy-adjusted,2.437708393595496,1.6850205966256844,3.1987473009839307,minus -10.24 x mean entropy gap +0.352 nats
+fig8,,contiguous - anticluster entropy gap,0.35227944636283404,,,nats
+fig8,,cluster - contiguous raw,-1.1181323846181235,-1.9566272031267484,-0.2929917251070343,"pLDDT, paired in cell"
+fig8,,cluster - contiguous entropy-adjusted,-1.7033245426178698,-2.4723033185773184,-0.944634612355602,minus -10.24 x mean entropy gap -0.057 nats
+fig8,,cluster - contiguous entropy gap,-0.05714985481201808,,,nats
+fig8,,autoregressive - contiguous raw,5.486409278710683,4.421798968116442,6.5418260745207455,"pLDDT, paired in cell"
+fig8,,autoregressive - contiguous entropy-adjusted,2.205607069959921,1.2568638540732602,3.1297072772359127,minus -10.24 x mean entropy gap -0.320 nats
+fig8,,autoregressive - contiguous entropy gap,-0.32040308014027674,,,nats
+fig9,,"bound vs plddt, mean Spearman rho",-0.02936507936507936,-0.17063492063492067,0.10476190476190478,"30 proteins, over the 8 strategies within each"
+fig9,,"bound vs recovery, mean Spearman rho",0.053214120524788036,-0.08213909014985764,0.1832880232343344,"30 proteins, over the 8 strategies within each"

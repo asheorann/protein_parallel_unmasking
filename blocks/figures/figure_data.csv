@@ -1,0 +1,62 @@
+figure,panel,label,value,ci_low,ci_high,note
+fig1,A,forced median ratio,7.8636436553532425,6.442517102543765,11.56583500753385,estimate / exact AR NLL
+fig1,A,bernoulli median ratio,1.0323841881917422,0.8729752730127941,1.8453632757772258,estimate / exact AR NLL
+fig1,A,kuniform median ratio,1.0000000123857098,0.9999999411077457,1.00000023113374,estimate / exact AR NLL
+fig1,B,forced sd at n_t=8,0.302477176839794,,,nats/residue across 5 seeds
+fig1,B,forced sd at n_t=32,0.5286767976518102,,,nats/residue across 5 seeds
+fig1,B,bernoulli sd at n_t=8,0.29822185353710556,,,nats/residue across 5 seeds
+fig1,B,bernoulli sd at n_t=32,0.08654603068119625,,,nats/residue across 5 seeds
+fig1,B,kuniform sd at n_t=8,0.04655679770387805,,,nats/residue across 5 seeds
+fig1,B,kuniform sd at n_t=32,0.021800589679014923,,,nats/residue across 5 seeds
+fig2,,"shipped defaults $n_t$=8, max blocks=16",-0.08635243764430232,-0.14455064478157198,-0.024301562081336898,cluster - anticluster
+fig2,,"more samples $n_t$=32, max blocks=32",0.04628195566658223,0.013133865150506852,0.08382300394834652,cluster - anticluster
+fig2,,"k-uniform $n_t$=32, 2 seeds",0.018502584313939772,0.003139429266528972,0.034231374926656656,cluster - anticluster
+fig3,,anticluster,2.694930816763714,2.643116945132021,2.7447156215806956,"k-uniform, 100 CATH domains"
+fig3,,autoregressive,2.632534290345211,2.579150860969263,2.6835847636399484,"k-uniform, 100 CATH domains"
+fig3,,burial,2.7116402243553406,2.661817973610316,2.757991698436286,"k-uniform, 100 CATH domains"
+fig3,,cluster,2.7134334010776535,2.6629915923902305,2.76083851634103,"k-uniform, 100 CATH domains"
+fig3,,contiguous,2.6594563541936567,2.6095568137394887,2.7065627237613774,"k-uniform, 100 CATH domains"
+fig3,,random,2.6981553442079047,2.6473320784829775,2.74560908651011,"k-uniform, 100 CATH domains"
+fig3,,single,2.675935574214742,2.6271984549637315,2.723825431936268,"k-uniform, 100 CATH domains"
+fig3,,sse,2.6503283219349134,2.6002142013190976,2.6966985795819705,"k-uniform, 100 CATH domains"
+fig4,A,anticluster mean bound,2.694930816763714,2.6430065585791045,2.746855074948323,
+fig4,A,autoregressive mean bound,2.632534290345211,2.5795714776251164,2.685497103065306,"exact special case, not fitted"
+fig4,A,burial mean bound,2.7116402243553406,2.6619429513476724,2.7613374973630087,
+fig4,A,cluster mean bound,2.7134334010776535,2.6635189552198852,2.763347846935422,
+fig4,A,contiguous mean bound,2.6594563541936567,2.607718411923652,2.7111942964636615,
+fig4,A,random mean bound,2.6981553442079047,2.647478763976833,2.7488319244389765,
+fig4,A,single mean bound,2.675935574214742,2.6251052027859774,2.7267659456435065,"exact special case, not fitted"
+fig4,A,sse mean bound,2.6503283219349134,2.59954258990234,2.701114053967487,
+fig4,A,between+within slope,0.11050867230710737,,,"r=0.0946, n=600, exact special cases excluded"
+fig4,B,anticluster centred,0.00694007300818412,-0.005222160279912177,0.019102306296280416,within-protein deviation
+fig4,B,burial centred,0.02364948059980891,0.010456380688651453,0.036842580510966366,within-protein deviation
+fig4,B,cluster centred,0.02544265732212389,0.013678847893635796,0.03720646675061198,within-protein deviation
+fig4,B,contiguous centred,-0.028534389561874006,-0.03862042597233541,-0.0184483531514126,within-protein deviation
+fig4,B,random centred,0.010164600452373964,-0.0011059451583338778,0.021435146063081806,within-protein deviation
+fig4,B,sse centred,-0.03766242182061696,-0.04923687189061017,-0.02608797175062374,within-protein deviation
+fig4,B,within-protein slope,0.011352317595572198,,,"r=0.0376, n=600, both axes protein-centred"
+fig5,,cluster - anticluster,0.018502584313939772,0.003139429266528972,0.034231374926656656,most vs least coupled
+fig5,,"cluster - anticluster, seed 0",0.013506226441116766,-0.002187116305897115,0.030008152656824605,one seed alone
+fig5,,"cluster - anticluster, seed 1",0.02349894218676282,0.007948387853757724,0.039253442731792605,one seed alone
+fig5,,"cluster - anticluster, proteins with a positive difference",0.56,,,fraction of 100
+fig5,,"cluster - anticluster, MC sd per protein",0.022347859927878556,,,"sd of the two-seed mean contrast, from the seed difference"
+fig5,,cluster - contiguous,0.05397704688399789,0.03568811965763143,0.0723236140423406,clustered vs BD3-LM
+fig5,,"cluster - contiguous, seed 0",0.05039283843763063,0.03230489699581028,0.06912902377073842,one seed alone
+fig5,,"cluster - contiguous, seed 1",0.05756125533036514,0.038517889926054046,0.07633575444726479,one seed alone
+fig5,,"cluster - contiguous, proteins with a positive difference",0.76,,,fraction of 100
+fig5,,"cluster - contiguous, MC sd per protein",0.021795665459665537,,,"sd of the two-seed mean contrast, from the seed difference"
+fig5,,contiguous - anticluster,-0.035474462570058124,-0.05363987924494941,-0.016257067358129984,BD3-LM vs least coupled
+fig5,,"contiguous - anticluster, seed 0",-0.03688661199651388,-0.055851523418886204,-0.017022618137260446,one seed alone
+fig5,,"contiguous - anticluster, seed 1",-0.03406231314360231,-0.05276231398171299,-0.014680851392432148,one seed alone
+fig5,,"contiguous - anticluster, proteins with a positive difference",0.26,,,fraction of 100
+fig5,,"contiguous - anticluster, MC sd per protein",0.02092011530691356,,,"sd of the two-seed mean contrast, from the seed difference"
+fig5,,single - anticluster,-0.018995242548972526,-0.031325351809334365,-0.006638203157372192,MDLM vs least coupled
+fig5,,"single - anticluster, seed 0",-0.004760324553276969,-0.01809989570591944,0.008696500924356537,one seed alone
+fig5,,"single - anticluster, seed 1",-0.03323016054466803,-0.04744198243489548,-0.01851578879979548,one seed alone
+fig5,,"single - anticluster, proteins with a positive difference",0.43,,,fraction of 100
+fig5,,"single - anticluster, MC sd per protein",0.035067206359365256,,,"sd of the two-seed mean contrast, from the seed difference"
+fig5,,single - autoregressive,0.04340128386953131,0.018054887196199524,0.06785666667817644,MDLM vs AR
+fig5,,"single - autoregressive, seed 0",0.0486802588670065,0.018297965572206143,0.08076101025803117,one seed alone
+fig5,,"single - autoregressive, seed 1",0.0381223088720561,0.004508518948758682,0.07104141538395489,one seed alone
+fig5,,"single - autoregressive, proteins with a positive difference",0.65,,,fraction of 100
+fig5,,"single - autoregressive, MC sd per protein",0.1055618359063965,,,"sd of the two-seed mean contrast, from the seed difference"
